@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A script that uses a for loop to print a string 10 times
+
+string="Best School"
+count=10
+
+for ((i=0; i<count; i++))
+do
+	echo "$string"
+done

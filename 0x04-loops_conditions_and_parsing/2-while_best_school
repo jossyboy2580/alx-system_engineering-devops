@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A script that uses the while loop construct to echo a string multiple times
+
+string="Best School"
+count=10
+i=0
+
+while [[ i -lt count ]];
+do
+	echo "$string";
+	((i++));
+done

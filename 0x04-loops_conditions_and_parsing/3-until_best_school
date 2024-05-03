@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A script that uses the until construct to echo a string 10 times
+
+string="Best School"
+count=10
+
+until [[ i -eq count ]]
+do
+	echo "$string"
+	((i++))
+done

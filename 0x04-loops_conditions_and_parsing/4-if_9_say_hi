@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A script that prints string 9 times and shouts hi before continuing
+
+string="Best School"
+count=10
+i=0
+
+while [[ i -lt count ]];
+do
+	echo "$string";
+	if [[ i -eq 8 ]];
+	then
+		echo "Hi";
+	fi
+	(( i++ ));
+done
