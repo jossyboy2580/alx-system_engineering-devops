@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# A script to print a clock
+
+hour=12
+minute=59
+
+i=0
+j=1
+
+while [[ j -le hour ]];
+do
+	while [[ i -le minute ]];
+	do
+		echo "$i"
+		(( i++ ))
+	done
+	echo "Hour: $j"
+	(( i = 0 ))
+	(( j++ ))
+done
