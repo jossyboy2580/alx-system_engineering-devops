@@ -4,8 +4,8 @@
 hour=12
 minute=59
 
-i=0
-j=0
+i=1
+j=1
 
 while [[ j -le hour ]];
 do
@@ -15,6 +15,6 @@ do
 		echo "$i"
 		(( i++ ))
 	done
-	(( i = 0 ))
+	(( i = 1 ))
 	(( j++ ))
 done
