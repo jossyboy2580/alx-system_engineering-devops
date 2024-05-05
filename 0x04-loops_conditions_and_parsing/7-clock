@@ -9,12 +9,12 @@ j=1
 
 while [[ j -le hour ]];
 do
+	echo "Hour: $j"
 	while [[ i -le minute ]];
 	do
 		echo "$i"
 		(( i++ ))
 	done
-	echo "Hour: $j"
 	(( i = 0 ))
 	(( j++ ))
 done
