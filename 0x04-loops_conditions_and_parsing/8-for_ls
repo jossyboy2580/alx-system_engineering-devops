@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # A script for parameter substition in bash
 
-filez="$(ls | cat)"
-for words in $filez;
+for file in *;
 do
-	word=${words##*-}
-	echo "${word##*/}"
+	word=${file##*-}
+	echo "$word"
 done
