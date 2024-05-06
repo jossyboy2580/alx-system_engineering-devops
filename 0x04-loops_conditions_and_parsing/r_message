@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#some script
-
-while IFS= read -r line;
-do
-	echo "$line" | cut -d "," -f 1,3 -
-done < message
