@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script for parameter substition in bash
+
+for file in *;
+do
+	word=${file##*-}
+	echo "$word"
+done
