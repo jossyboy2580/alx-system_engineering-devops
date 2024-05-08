@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script thay uses awk to parse log file
+
+cat apache-access.log | awk '{print $1 $5}'
