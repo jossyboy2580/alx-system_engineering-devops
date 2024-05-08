@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A script thay uses awk to parse log file
 
-awk '{print $1, $7}' < apache-access.log
+awk '{print $1, $9}' < apache-access.log
