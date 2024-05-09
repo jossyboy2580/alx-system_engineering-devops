@@ -1,0 +1,3 @@
+  PID TTY          TIME CMD
+   14 tty1     00:00:12 bash
+ 3401 tty1     00:00:00 ps
