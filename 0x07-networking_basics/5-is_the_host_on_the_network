@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script to ping a specific address five times
+
+if [ $# -ne 1 ];
+then
+	echo "Usage: $0 {IP_ADDRESS}"
+else
+	ping -c 5 "$1"
+fi
