@@ -5,7 +5,7 @@ local="127.0.0.2	localhost"
 fbk="8.8.8.8	facebook.com"
 
 cat /etc/hosts > ~/host_new
-sed -i 's/^127.*$/$local/' ~/host_new
+sed -i "s/^127.*$/$local/" ~/host_new
 
 echo "$local" >> ~/host_new
 echo "$fbk" >> ~/host_new
