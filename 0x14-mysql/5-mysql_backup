@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script to dump a database and gzip the file
+
+mysqldump --user root -p "$#1" --all-databases > backup.sql
+day="$(date +%d)"
+month="$(date +%m)"
+year="$(date +%Y)"
+tar -zcf "$day-$month-$year.tar.gz" backup.sql
