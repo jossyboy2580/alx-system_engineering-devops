@@ -16,6 +16,10 @@ sudo ufw allow 'Nginx HTTP'
 # Restart the Nginx service using service command
 sudo service nginx restart
 
+# Give the appropraite permissions to the user
+chown -R $USER:$USER /var/www/html /var/www/joetalkscode.tech/html
+chmod -R 755 /var/www
+
 # Create a simple HTML file with "Hello World!" to verify the installation
 echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
 
