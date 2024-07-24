@@ -1,12 +1,35 @@
 #!/usr/bin/env bash
-# A script to install nginx on a web server
-outstring="server_name*"
-instring="$outstring\nrewrite */redirect_me$ permanent"
+# A script to install nginx on a web server and create a redirect
+outstring="server_name*;"
+instring="$outstring\nrewrite /redirect_me$ permanent;"
 
-sudo su
-apt-get -y update
-apt-get install nginx -y
-ufw allow 'Nginx HTTP'
-service nginx restart
-echo 'Hello World' > /var/www/html/index.nginx_debian.html
-sed -i "s/$outstring/$instring/" /etc/nginx/sites-available/default
+# Update the package lists
+sudo apt-get -y update
+
+# Install Nginx
+sudo apt-get install nginx -y
+
+# Enable UFW if not already enabled
+sudo ufw enable
+
+# Allow HTTP traffic through the firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Restart the Nginx service using service command
+sudo service nginx restart
+
+# Create a simple HTML file with "Hello World!" to verify the installation
+echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
+
+# Ensure Nginx is listening on port 80 (default configuration)
+sudo sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
+
+# Redirect all trafic
+sudo sed -i "s/$outstring/$instring/" /etc/nginx/sites-available/default
+
+# Restart the Nginx service using service command
+sudo service nginx restart
+
+# Print the status of Nginx to ensure it is running and listening on port 80
+# sudo service nginx status
+
