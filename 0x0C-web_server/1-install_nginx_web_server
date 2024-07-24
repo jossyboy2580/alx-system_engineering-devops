@@ -7,17 +7,14 @@ sudo apt-get -y update
 # Install Nginx
 sudo apt-get install nginx -y
 
-# Enable UFW if not already enabled
-sudo ufw enable
+# Start the nginx
+sudo service nginx start
 
 # Allow HTTP traffic through the firewall
 sudo ufw allow 'Nginx HTTP'
 
-# Restart the Nginx service using service command
-sudo service nginx restart
-
 # Give the appropraite permissions to the user
-sudo chown -R $USER:$USER /var/www/html /var/www/joetalkscode.tech/html
+sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
 # Create a simple HTML file with "Hello World!" to verify the installation
@@ -27,7 +24,7 @@ echo -e 'Hello World!' > /var/www/html/index.nginx-debian.html
 # sudo sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
 
 # Reload the ufw service
-sudo ufw reload
+sudo service ufw restart
 
 # Restart the Nginx service using service command
 sudo service nginx restart
