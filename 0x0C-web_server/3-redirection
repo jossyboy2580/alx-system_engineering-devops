@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A script to install nginx on a web server
+outstring="server_name*"
+instring="$outstring\nrewrite */redirect$ permanent"
+
+sudo su
+apt-get -y update
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+service nginx restart
+echo 'Hello World' > /var/www/html/index.nginx_debian.html
+sed -i "s/$outstring/$instring/" /etc/nginx/sites-available/default
