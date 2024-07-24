@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script to install nginx on a web server
 outstring="server_name*"
-instring="$outstring\nrewrite */redirect$ permanent"
+instring="$outstring\nrewrite */redirect_me$ permanent"
 
 sudo su
 apt-get -y update
