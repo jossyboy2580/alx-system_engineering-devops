@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script to run a command as another user
+
+if [ $# -eq 2 ]
+then
+	su $1;
+	whoami;
+	exit
+fi
