@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     number of subscribers it has (Not active users!)
     """
 
-    endpoint = f'https://www.reddit.com/r/{subreddit}/about.json'
+    endpoint = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     header = {'User-Agent': 'Ubuntu/20.04 ALXSE /u/jossyboy2580'}
 
     response = requests.get(
