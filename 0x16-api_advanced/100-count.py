@@ -3,8 +3,8 @@
 A recursive call to count all the occurence of th
 words in the keywords list
 """
-import requests
 import re
+import requests
 
 
 def count_words(subreddit, word_list,
