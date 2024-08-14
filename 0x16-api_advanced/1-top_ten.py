@@ -14,16 +14,20 @@ def top_ten(subreddit):
 
     endpoint = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {"User-Agent": "Ubuntu/20.04.06 ALXSE (by /u/jossy2580)"}
+    params = {'limit': 10}
 
-    re = requests.get(endpoint, headers=headers, allow_redirects=False)
+    re = requests.get(endpoint,
+                      headers=headers,
+                      params=params,
+                      allow_redirects=False)
 
     if re.status_code != 200:
         print(None)
         return
 
     data = re.json()
-    data_dict = data['data']['children']
-
-    for i in range(10):
-        print("{}".format(data_dict[i]['data']['title']))
+    posts = data['data']['children']
+    
+    for post in posts:
+        print("{}".format(post['data']['title']))
     return
