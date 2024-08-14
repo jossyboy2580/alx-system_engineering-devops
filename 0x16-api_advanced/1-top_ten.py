@@ -13,7 +13,7 @@ def top_ten(subreddit):
     """
 
     endpoint = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    headers = {"User-Agent": "Ubuntu/20.04.06 ALXSE (by /u/jossy2580)"}
+    headers = {"User-Agent": "ALXSE/C22 (by /u/jossy2580)"}
     params = {'limit': 10}
 
     re = requests.get(endpoint,
@@ -27,7 +27,5 @@ def top_ten(subreddit):
 
     data = re.json()
     posts = data['data']['children']
-    
     for post in posts:
         print("{}".format(post['data']['title']))
-    return
