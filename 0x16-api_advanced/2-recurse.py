@@ -15,7 +15,7 @@ def recurse(subreddit, limit=100, hotlist=[], after=None):
     endpoint = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     params = {'limit': limit}
     headers = {'User-Agent': 'ALXSE/C22 (by /u/jossyboy2580)'}
-    
+
     if after:
         params['after'] = after
 
